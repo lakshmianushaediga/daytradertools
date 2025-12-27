@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Market Hours Countdown with Candles Remaining</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
 <h2>Day Traders Tools</h2>
 
 <div class="toggle-bar">
@@ -25,29 +34,29 @@
 </div>
 
 <div id="marketSection" class="section active">
- <h3>⏳ Market Hours Countdown (CST)</h3>
+    <h3>⏳ Market Hours Countdown (CST)</h3>
 
-<label for="startDate">Start Date & Time (CST):</label>
-<input type="datetime-local" id="startDate" />
+    <label for="startDate">Start Date & Time (CST):</label>
+    <input type="datetime-local" id="startDate" />
 
-<label for="endDate">End Date & Time (CST):</label>
-<input type="datetime-local" id="endDate" />
+    <label for="endDate">End Date & Time (CST):</label>
+    <input type="datetime-local" id="endDate" />
 
-<button id="startBtn">Start Countdown</button>
-<button id="resetBtn">Reset</button>
+    <button id="startBtn">Start Countdown</button>
+    <button id="resetBtn">Reset</button>
 
-<div class="result" id="countdown">--:--:--</div>
-<div id="candlesRemaining">Estimated 4H Trading Candles Remaining: --</div>
+    <div class="result" id="countdown">--:--:--</div>
+    <div id="candlesRemaining">Estimated 4H Trading Candles Remaining: --</div>
 
-<!-- Progress bar -->
-<div class="progress-container" aria-label="Market Hours Progress">
-    <div class="progress-bar" id="progressBar">0%</div>
-</div>
+    <!-- Progress bar -->
+    <div class="progress-container" aria-label="Market Hours Progress">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
 
-<div class="container">
-    <canvas id="marketClock" width="250" height="250"></canvas>
-    <div class="time-left" id="timeLeftText">--:--:--</div>
-</div>
+    <div class="container">
+        <canvas id="marketClock" width="250" height="250"></canvas>
+        <div class="time-left" id="timeLeftText">--:--:--</div>
+    </div>
 </div>
 
 <div id="profitSection" class="section">
@@ -106,3 +115,8 @@
     <div id="eventsList"></div>
 
 </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
