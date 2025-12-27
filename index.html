@@ -7,42 +7,95 @@
 </head>
 <body>
 
-<h2>⏳ Market Hours Countdown</h2>
+<h2>Day Traders Tools</h2>
 
-<div class="top-icons">
-    <div id="timezoneSettings">
-        <span id="timezoneIcon" title="Timezone Settings">⚙️</span>
-        <select id="timezoneSelect">
-            <option value="EST">EST (Eastern)</option>
-            <option value="CST">CST (Central)</option>
-            <option value="MST">MST (Mountain)</option>
-            <option value="PST">PST (Pacific)</option>
-        </select>
+<div class="toggle-bar">
+    <button class="toggle-btn active" data-target="marketSection">
+        ⏳ Market Hours
+    </button>
+    <button class="toggle-btn" data-target="profitSection">
+        📈 Profit %
+    </button>
+</div>
+
+<div id="marketSection" class="section active">
+    <h3>⏳ Market Hours Countdown (CST)</h3>
+    <div class="top-icons">
+        <div id="timezoneSettings">
+            <span id="timezoneIcon" title="Timezone Settings">⚙️</span>
+            <select id="timezoneSelect">
+                <option value="EST">EST (Eastern)</option>
+                <option value="CST">CST (Central)</option>
+                <option value="MST">MST (Mountain)</option>
+                <option value="PST">PST (Pacific)</option>
+            </select>
+        </div>
+
+        <div id="themeToggle" title="Toggle Day/Night">🌙</div>
     </div>
 
-    <div id="themeToggle" title="Toggle Day/Night">🌙</div>
+    <label for="startDate">Start Date & Time (CST):</label>
+    <input type="datetime-local" id="startDate" />
+
+    <label for="endDate">End Date & Time (CST):</label>
+    <input type="datetime-local" id="endDate" />
+
+    <button id="startBtn">Start Countdown</button>
+    <button id="resetBtn">Reset</button>
+
+    <div class="result" id="countdown">--:--:--</div>
+    <div id="candlesRemaining">Estimated 4H Trading Candles Remaining: --</div>
+
+    <!-- Progress bar -->
+    <div class="progress-container" aria-label="Market Hours Progress">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+
+    <div class="container">
+        <canvas id="marketClock" width="250" height="250"></canvas>
+        <div class="time-left" id="timeLeftText">--:--:--</div>
+    </div>
 </div>
 
-<label for="startDate">Start Date & Time (CST):</label>
-<input type="datetime-local" id="startDate" />
+<div id="profitSection" class="section">
 
-<label for="endDate">End Date & Time (CST):</label>
-<input type="datetime-local" id="endDate" />
+    <h3>📈 Profit Percentage Calculator</h3>
 
-<button id="startBtn">Start Countdown</button>
-<button id="resetBtn">Reset</button>
+    <label>Entry Price</label>
+    <input
+            type="number"
+            id="entryPrice"
+            placeholder="Enter entry price"
+            step="0.01"
+            min="0"
+    >
 
-<div class="result" id="countdown">--:--:--</div>
-<div id="candlesRemaining">Estimated 4H Trading Candles Remaining: --</div>
+    <label>
+        Profit % :
+        <span id="profitPercentLabel">0%</span>
+    </label>
+    <input
+            type="range"
+            id="profitSlider"
+            min="0"
+            max="1000"
+            value="0"
+            step="1">
 
-<!-- Progress bar -->
-<div class="progress-container" aria-label="Market Hours Progress">
-    <div class="progress-bar" id="progressBar">0%</div>
-</div>
+    <label>Exit Price</label>
+    <input
+            type="number"
+            id="exitPrice"
+            placeholder="Auto-calculated"
+            step="0.01"
+            min="0"
+    >
 
-<div class="container">
-    <canvas id="marketClock" width="250" height="250"></canvas>
-    <div class="time-left" id="timeLeftText">--:--:--</div>
+    <div class="profit-buttons">
+        <button onclick="calculateProfit()">Calculate</button>
+        <button onclick="resetProfit()">Reset</button>
+    </div>
+    <div class="result" id="profitResult">--%</div>
 </div>
 
 <script src="script.js"></script>
