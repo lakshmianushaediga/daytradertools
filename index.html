@@ -48,6 +48,12 @@
 <div id="marketSection" class="section active">
     <h3>⏳ Market Hours Countdown (CST)</h3>
 
+    <p>Knowing exactly when the stock market opens and closes is critical for day traders. Trading outside market hours can lead to low liquidity, wider spreads, and unexpected price movements.</p>
+
+    <h2>How the Market Hours Countdown Works</h2>
+    <p>This tool displays a live countdown to the next market open or close based on U.S. stock market hours. It helps traders plan entries, exits, and avoid trading during off-hours.</p>
+
+
     <label for="startDate">Start Date & Time (CST):</label>
     <input type="datetime-local" id="startDate" />
 
@@ -69,11 +75,27 @@
         <canvas id="marketClock" width="250" height="250"></canvas>
         <div class="time-left" id="timeLeftText">--:--:--</div>
     </div>
+
+    <h2>Why Market Timing Matters</h2>
+    <p>Most trading volume occurs during regular market hours. Day traders rely on volatility and liquidity, which drop significantly outside normal sessions.</p>
+
+    <h2>Who Should Use This Tool</h2>
+    <ul>
+        <li>Day traders</li>
+        <li>Options traders</li>
+        <li>Active stock traders</li>
+    </ul>
 </div>
 
 <div id="profitSection" class="section">
 
     <h3>📈 Profit Percentage Calculator</h3>
+
+    <p>Calculating profit and loss percentages quickly helps traders make better decisions and manage risk effectively.</p>
+
+    <h2>How to Use the Profit Calculator</h2>
+    <p>Enter your entry price and exit price to instantly calculate the profit or loss percentage for your trade.</p>
+
 
     <label>Entry Price</label>
     <input
@@ -110,11 +132,40 @@
         <button onclick="resetProfit()">Reset</button>
     </div>
     <div class="result" id="profitResult">--%</div>
+
+    <h2>Why Profit Percentage Matters</h2>
+    <p>Percentage-based evaluation allows traders to compare trades consistently regardless of position size.</p>
+
 </div>
 
 <div id="eventsSection" class="section">
 
     <h3>📅 Events Countdown</h3>
+
+    <p>
+        Market-moving events such as economic data releases, earnings announcements,
+        and Federal Reserve decisions can significantly impact stock prices.
+        Keeping track of these events helps traders prepare and avoid unexpected volatility.
+    </p>
+
+    <h2>What Is the Events Countdown Tool?</h2>
+    <p>
+        The Events Countdown tool allows traders to create and track upcoming market events
+        with a live countdown timer. Instead of relying on memory or external calendars,
+        traders can quickly see how much time remains before an important event.
+    </p>
+
+    <h2>How to Use the Events Countdown</h2>
+    <ol>
+        <li>Enter the name of the event, such as CPI data, earnings, or economic reports.</li>
+        <li>Select the exact date and time of the event.</li>
+        <li>Click the add button to start tracking the countdown.</li>
+    </ol>
+
+    <p>
+        Once added, the countdown updates automatically and shows how much time remains
+        until the event occurs.
+    </p>
 
     <label>Event Name</label>
     <input type="text" id="eventName" placeholder="e.g. CPI Data, Earnings">
@@ -157,7 +208,6 @@
     <a href="terms.html">Terms</a> |
     <a href="contact.html">Contact</a>
 </footer>
-
 
 
 <script src="script.js"></script>
